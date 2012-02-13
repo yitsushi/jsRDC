@@ -38,9 +38,9 @@ io.sockets.on "connection", (socket) ->
 send_broadcast = (cmd, data) ->
   s?.emit?("message", {cmd: cmd, args: data} ) for s in socket_cache
   
-app.get "/msg", (req, res) ->
+app.post "/msg", (req, res) ->
   console.log req
-  send_broadcast req.query['cmd'], req.query['data']
+  send_broadcast req.body['cmd'], req.body['data']
   res.writeHead(200, {'Content-Type': 'text/plain'}); res.end('Ok\n');
 
 app.listen 3000

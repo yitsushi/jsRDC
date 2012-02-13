@@ -3,6 +3,7 @@ script src: "/javascripts/index.js"
 
 section role: "viewport", ->
   header "Remote Debug Console <small>jsRDC v0.1 — Free Albatros</small>"
+  section class: "console"
 
 footer id: "statusbar", ->
   span "Status: "

@@ -1,12 +1,18 @@
 var error_handler, socket_handler, socket, commands = {},
     is_connected = false;
 
+function decode(str) {
+  return unescape(str.replace(/\+/g, " "));
+}
+
+
 commands = {
-  log: function(data) {
+  log: function(data, type) {
+    if (!type) type = 'log'
     var div = document.createElement('div');
-    div.innerHTML = data;
-    div.className = 'line';
-    document.querySelector('section[role="viewport"]').appendChild(div);
+    div.innerHTML = decode(data);
+    div.className = 'line ' + type;
+    document.querySelector('section[role="viewport"] section.console').appendChild(div);
   },
   disconnect: function() {
     var status = document.querySelector('#statusbar .status');
@@ -30,11 +36,14 @@ socket_handler = function(data) {
   typeof console !== "undefined" && console !== null ? console.log(data) : void 0;
   try {
     if (commands[data.cmd]) {
-      commands[data.cmd](data.args);
+      commands[data.cmd](data.args, data.cmd);
+    } else {
+      commands.log(data.args, data.cmd);
     }
     return _status.setAttribute('rel', "success");
   } catch (e) {
     _status.setAttribute('rel', "error");
+    commands.log(data.args, data.cmd);
     return error_handler(e);
   }
 };

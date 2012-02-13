@@ -39,7 +39,7 @@ footer#statusbar .separator:before {
 
 section[role="viewport"] {
   position: absolute;
-  top: 0px
+  top: 0px;
   bottom: 20px;
   height: 100%;
   left: 0;
@@ -72,15 +72,39 @@ section[role="viewport"] header small {
   color: #eea;
 }
 
-section[role="viewport"] div.line {
+section[role="viewport"] section.console {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 27px;
+  right: 0;
+  overflow-y: scroll;
+  top: 2.5em;
+}
+
+section[role="viewport"] section.console div.line {
   color: white;
   font-family: "courier new";
   padding: 5px 10px;
   border-bottom: 1px solid #222;
 }
-section[role="viewport"] div.line:nth-child(2n+1) {
+section[role="viewport"] section.console div.line:nth-child(2n+1) {
   background-color: rgba(255, 255, 255, 0.04);
 }
-section[role="viewport"] div.line:nth-child(2n) {
+section[role="viewport"] section.console div.line:nth-child(2n) {
   background-color: rgba(255, 255, 255, 0.02);
 }
+
+/* styles */
+.white { color: #fff; }
+.red { color: #c33; }
+.green { color: #3c3; }
+.blue { color: #33c; }
+.yellow { color: #cc3; }
+.magenta { color: #c3c; }
+.cyan { color: #3cc; }
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
