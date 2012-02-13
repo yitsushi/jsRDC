@@ -1,0 +1,86 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+footer#statusbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.8);
+  color: #777;
+  padding: 5px;
+}
+
+footer#statusbar .status.disconnected,
+footer#statusbar .last_message[rel="error"] {
+  color: #a55;
+}
+
+footer#statusbar .status.connected,
+footer#statusbar .last_message[rel="success"] {
+  color: #0c0;
+}
+
+footer#statusbar .separator {
+  padding-right: 10px;
+  margin-left: 10px;
+  color: #555;
+}
+
+footer#statusbar .separator:before {
+  content: "|";
+}
+
+section[role="viewport"] {
+  position: absolute;
+  top: 0px
+  bottom: 20px;
+  height: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0, 0.9);
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+section[role="viewport"] header {
+  padding: 5px 10px;
+  font-size: 1.5em;
+  color: #eee;
+  background-color: black;
+}
+
+section[role="viewport"] header small {
+  float: right;
+  display: block;
+  font-size: 0.6em;
+  margin-top: 0.4em;
+  color: #eea;
+}
+
+section[role="viewport"] div.line {
+  color: white;
+  font-family: "courier new";
+  padding: 5px 10px;
+  border-bottom: 1px solid #222;
+}
+section[role="viewport"] div.line:nth-child(2n+1) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+section[role="viewport"] div.line:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
