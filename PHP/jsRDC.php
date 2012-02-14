@@ -1,11 +1,11 @@
 <?php
 class jsRDC {
-  const SERVER = 'http://localhost:3000';
+  const SERVER = 'http://woopdev.co.cc:8800';
   
   public static function send($message, $type = 'log') {
     $data = array(
       'cmd'   => $type,
-      'data'  => urlencode($message)
+      'data'  => urlencode("<span class='magenta'>{$_SERVER['PHP_ENV']}:</span> {$message}")
     );
     
     $ch = curl_init();
@@ -19,6 +19,18 @@ class jsRDC {
     curl_setopt_array($ch, $options);
     curl_exec($ch);
     curl_close($ch);
+  }
+  
+  public static function info($message) {
+    self::send($message, 'info');
+  }
+  
+  public static function warn($message) {
+    self::send($message, 'warn');
+  }
+  
+  public static function dump($obj) {
+    self::send(json_encode($obj), 'dump');
   }
 }
 
@@ -55,49 +67,3 @@ EOF;
 
 set_error_handler('jsRDC_error_handler');
 set_exception_handler('jsRDC_exception_handler');
-
-echo "Random error generator<br />\n";
-
-$rand = (rand() % 10);
-switch ($rand) {
-  case 0:
-    echo $a;
-    break;
-  case 1:
-    $c = NICE_CONST;
-    break;
-  case 2:
-    $c = $_POST['apple']['pear'];
-    break;
-  case 3:
-    $c = array_merge(1, 2);
-    break;
-  case 4:
-    $c = join();
-    break;
-  case 5:
-    $c = array();
-    $c->myVariable;
-    break;
-  case 6:
-    throw new Exception("Error Processing Request", 1);
-    break;
-  case 7:
-    $b = null;
-    foreach($b as $c) {
-      echo "ok";
-    }
-    break;
-  case 8:
-    $a = array();
-    $b = $a['omg'];
-    break;
-  case 9:
-    $c = 10;
-    $c = $c/0;
-    break;
-  default:
-    echo "no error";
-    break;
-}
-die('error generated');
