@@ -1,6 +1,9 @@
 <?php
+if (!array_key_exists('PHP_ENV', $_SERVER))
+  $_SERVER['PHP_ENV'] = 'unknown';
+
 class jsRDC {
-  const SERVER = 'http://woopdev.co.cc:8800';
+  const SERVER = 'http://localhost:3000';
   
   public static function send($message, $type = 'log') {
     $data = array(
