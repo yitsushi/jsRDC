@@ -5,10 +5,10 @@ jsRDC is a Remote Debug Console and usable for handling errors, notices or somet
 ### Required
 
 * [Node.js](http://nodejs.org/) && npm
-  * coffee-script@1.2.0
-  * coffeekup@0.3.1
-  * express@2.5.5
-  * socket.io@0.8.7
+  * coffee-script @1.2.0
+  * coffeekup @0.3.1
+  * express @2.5.5
+  * socket.io @0.8.7
 
 ### Start and using
 
