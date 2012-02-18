@@ -36,7 +36,7 @@ This file is a random error/notice/message generator in PHP.
     cd PHP
     php php_error.php
     
-Now you can see the error/notice/debug message in your browser. If you run it again then you got a new error =) Is it cool? Yeah.
+Now you can see the error/notice/debug message in your browser. If you run it again then you get a new error =) Is it cool? Yeah.
 If you don't see these messages then sorry =/
 after some feature I would fix bugs and build a better lib for PHP and some other languages.
 
