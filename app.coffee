@@ -2,6 +2,7 @@ express = require("express")
 routes = require("./routes")
 coffeekup = require("coffeekup")
 
+port = process.env.PORT || 3000
 
 app = module.exports = express.createServer()
 app.configure ->
@@ -43,5 +44,5 @@ app.post "/msg", (req, res) ->
   send_broadcast req.body['cmd'], req.body['data']
   res.writeHead(200, {'Content-Type': 'text/plain'}); res.end('Ok\n');
 
-app.listen 3000
+app.listen port
 console.log "Express server listening on port %d in %s mode", app.address().port, app.settings.env

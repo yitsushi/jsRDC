@@ -3,14 +3,14 @@ if (!array_key_exists('PHP_ENV', $_SERVER))
   $_SERVER['PHP_ENV'] = 'unknown';
 
 class jsRDC {
-  const SERVER = 'http://localhost:3000';
-  
+  const SERVER = 'http://jsrdc.code-infection.com';
+
   public static function send($message, $type = 'log') {
     $data = array(
       'cmd'   => $type,
       'data'  => urlencode("<span class='magenta'>{$_SERVER['PHP_ENV']}:</span> {$message}")
     );
-    
+
     $ch = curl_init();
     $options = array(
       CURLOPT_URL             => self::SERVER."/msg",
@@ -23,15 +23,15 @@ class jsRDC {
     curl_exec($ch);
     curl_close($ch);
   }
-  
+
   public static function info($message) {
     self::send($message, 'info');
   }
-  
+
   public static function warn($message) {
     self::send($message, 'warn');
   }
-  
+
   public static function dump($obj) {
     self::send(json_encode($obj), 'dump');
   }
