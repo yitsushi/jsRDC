@@ -56,6 +56,8 @@ Now change connect in public/javascripts/index.js line 51
     git push heroku master
     heroku ps:scale web=1
 
+Demo: [http://jsrdc.herokuapp.com/](http://jsrdc.herokuapp.com/).
+
 ### Planned features
 
 1. Registration/Login

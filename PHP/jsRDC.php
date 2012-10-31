@@ -3,7 +3,7 @@ if (!array_key_exists('PHP_ENV', $_SERVER))
   $_SERVER['PHP_ENV'] = 'unknown';
 
 class jsRDC {
-  const SERVER = 'http://jsrdc.code-infection.com';
+  const SERVER = 'http://jsrdc.herokuapp.com';
 
   public static function send($message, $type = 'log') {
     $data = array(

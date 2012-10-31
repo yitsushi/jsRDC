@@ -48,7 +48,7 @@ socket_handler = function(data) {
   }
 };
 
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('http://jsrdc.herokuapp.com');
 socket.on('message', socket_handler);
 socket.on('disconnect', commands.disconnect);
 socket.on('connect', commands.connected);
