@@ -18,7 +18,7 @@ install as global package (-g) for scripts
 
 clone the source
 
-    git clone git://github.com/Yitsushi/jsRDC.git
+    git clone https://yitsushi@bitbucket.org/yitsushi/jsrdc.git
     cd jsRDC
 
 install dependences
@@ -42,7 +42,7 @@ after some feature I would fix bugs and build a better lib for PHP and some othe
 
 ### Host in Heroku
 
-    git clone git://github.com/Yitsushi/jsRDC.git
+    git clone https://yitsushi@bitbucket.org/yitsushi/jsrdc.git
     cd jsRDC
     heroku create --stack cedar jsrdc
     heroku info  # you can get the domain of the app like http://jsrdc.herokuapp.com/
