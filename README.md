@@ -40,7 +40,7 @@ Now you can see the error/notice/debug message in your browser. If you run it ag
 If you don't see these messages then sorry =/
 after some feature I would fix bugs and build a better lib for PHP and some other languages.
 
-Demo: [http://jsrdc.code-infection.com/](http://jsrdc.code-infection.com/).
+Demo: [http://jsrdc.herokuapp.com/](http://jsrdc.herokuapp.com/).
 
 ### Planned features
 
