@@ -5,10 +5,10 @@ jsRDC is a Remote Debug Console and usable for handling errors, notices or somet
 ### Required
 
 * [Node.js](http://nodejs.org/) && npm
-  * coffee-script @1.2.0
-  * coffeekup @0.3.1
-  * express @2.5.5
-  * socket.io @0.8.7
+* coffee-script @1.2.0
+* coffeekup @0.3.1
+* express @2.5.5
+* socket.io @0.8.7
 
 ### Start and using
 
@@ -57,6 +57,10 @@ Now change connect in public/javascripts/index.js line 51
     heroku ps:scale web=1
 
 Demo: [http://jsrdc.herokuapp.com/](http://jsrdc.herokuapp.com/).
+
+### Screenshot
+
+![Screenshot 1](https://bitbucket.org/yitsushi/jsrdc/downloads/Screen%20Shot%202012-10-31%20at%202.06.03%20PM.png)
 
 ### Planned features
 
