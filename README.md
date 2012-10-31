@@ -40,6 +40,22 @@ Now you can see the error/notice/debug message in your browser. If you run it ag
 If you don't see these messages then sorry =/
 after some feature I would fix bugs and build a better lib for PHP and some other languages.
 
+### Host in Heroku
+
+    git clone git://github.com/Yitsushi/jsRDC.git
+    cd jsRDC
+    heroku create --stack cedar jsrdc
+    heroku info  # you can get the domain of the app like http://jsrdc.herokuapp.com/
+
+Now change connect in public/javascripts/index.js line 51
+
+    From: var socket = io.connect('http://localhost:3000');
+    To: var socket = io.connect('http://jsrdc.herokuapp.com');
+
+    git commit -am 'commit -m 'change host''
+    git push heroku master
+    heroku ps:scale web=1
+
 ### Planned features
 
 1. Registration/Login
